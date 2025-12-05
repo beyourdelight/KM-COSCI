@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/web_style.css" rel="stylesheet">
+</head>
+
+<body id="top">
+<main>
+
+<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.svg" id="nav-logo" alt="COSCI Logo" style="height: 50px; width: auto;">
+                </a>
+
+                <div class="d-lg-none ms-auto me-3">
+                    <a href="index.html" class="navbar-icon bi-search me-3"></a>
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="categories.html">
+                            Categories
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <div class="d-none d-lg-flex align-items-center">
+                    <a href="index.html" class="navbar-icon bi-search me-3"></a>
+
+                    <div class="dropdown">
+                        <a class="navbar-icon bi-person dropdown-toggle remove-arrow" href="javascript:void(0);" role="button" id="profileDropdown" aria-expanded="false">
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end profile-menu shadow" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="profile.html">View Profile</a></li>
+                            <li><a class="dropdown-item" href="my-favorite.html">My Favorites</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </nav>
+
+<!-- DASHBOARD HERO -->
+<!-- <section class="dashboard-hero mb-0" style="margin-bottom: 0; padding-bottom: 0;">
+    <h1 class="mb-0">Dashboard</h1>
+</section> -->
+
+<section class="dashboard-hero" style="
+    padding: 120px 0 50px;
+    background: linear-gradient(180deg, #4C83FF, #1E5AA8);
+    color: white;
+    text-align: center;
+">
+    <h1 style="font-size: 42px; font-weight: 700; margin: 0;">
+        Dashboard
+    </h1>
+</section>
+
+<!-- DASHBOARD CONTENT -->
+<section class="section-padding section-bg" style="background: #F1F3F5; padding: 30px 0;">
+    <div class="container px-3">
+
+        <!-- TOP STATS -->
+        <div class="row g-3 mb-3">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card shadow-sm p-3 rounded-4">
+                    <h6 class="fw-semibold small text-secondary mb-1">Visitors Today</h6>
+                    <h3 class="fw-bold mb-1">1,240</h3>
+                    <small class="text-success">↑ 12% from yesterday</small>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card shadow-sm p-3 rounded-4">
+                    <h6 class="fw-semibold small text-secondary mb-1">Total Documents</h6>
+                    <h3 class="fw-bold mb-1">854</h3>
+                    <small class="text-success">↑ 5% this month</small>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card shadow-sm p-3 rounded-4">
+                    <h6 class="fw-semibold small text-secondary mb-1">Document Views</h6>
+                    <h3 class="fw-bold mb-1">32,540</h3>
+                    <small class="text-success">↑ 8% this week</small>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="card shadow-sm p-3 rounded-4">
+                    <h6 class="fw-semibold small text-secondary mb-1">New Users</h6>
+                    <h3 class="fw-bold mb-1">128</h3>
+                    <small class="text-success">↑ 10% this month</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ANALYTICS + NOTIFICATIONS -->
+        <div class="row g-3">
+
+            <div class="col-lg-8">
+                <div class="card shadow-sm p-4 rounded-4" style="height: 360px;">
+                    <h5 class="mb-3 fw-bold">Analytics Overview</h5>
+                    <div style="height: 250px;">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card shadow-sm p-4 rounded-4" style="height: 360px; overflow-y: auto;">
+                    <h5 class="mb-3 fw-bold">Notifications</h5>
+
+                    <div class="d-flex flex-column gap-2">
+
+                        <div class="p-2 rounded-3 bg-light small">
+                            📄 <b>New document:</b> Psychology Basics.pdf
+                        </div>
+
+                        <div class="p-2 rounded-3 bg-light small">
+                            👤 <b>New user:</b> Mark Wilson
+                        </div>
+
+                        <div class="p-2 rounded-3 bg-light small">
+                            📥 <b>Downloaded:</b> History2023.pdf
+                        </div>
+
+                        <div class="p-2 rounded-3 bg-light small">
+                            ⚠️ Maintenance scheduled tomorrow
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RECENT DOCUMENTS -->
+        <div class="row g-3 mt-3">
+            <div class="col-12">
+                <div class="card shadow-sm p-4 rounded-4">
+
+                    <h5 class="mb-3 fw-bold">Recent Documents</h5>
+
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Document</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Views</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>HR Policy Update Q1</td>
+                            <td>Human Resources</td>
+                            <td>10 Feb 2024</td>
+                            <td>398</td>
+                        </tr>
+                        <tr>
+                            <td>Research Methodology – Full Edition</td>
+                            <td>Academic</td>
+                            <td>09 Feb 2024</td>
+                            <td>1,052</td>
+                        </tr>
+                        <tr>
+                            <td>Student Loan Procedures PDF</td>
+                            <td>Student Affairs</td>
+                            <td>08 Feb 2024</td>
+                            <td>543</td>
+                        </tr>
+                        <tr>
+                            <td>Staff Performance Evaluation Form</td>
+                            <td>Administration</td>
+                            <td>07 Feb 2024</td>
+                            <td>312</td>
+                        </tr>
+                        
+                            </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer section-padding">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-12 mb-4 pb-2">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.svg" id="footer-logo" alt="COSCI Logo" style="height: 60px; width: auto;">
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6">
+                <h6 class="site-footer-title mb-3">Pages</h6>
+                <ul class="site-footer-links">
+                    <li class="site-footer-link-item">
+                        <a href="#top" class="site-footer-link">Home</a>
+                    </li>
+                    <li class="site-footer-link-item">
+                        <a href="categories.html" class="site-footer-link">Categories</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                <h6 class="site-footer-title mb-3">Information</h6>
+
+                <p class="text-white d-flex mb-1">
+                    <a href="tel: 02-649-5000" class="site-footer-link">
+                        02-649-5000 Ext. 11275<br>
+                        02-259-2343
+                    </a>
+                </p>
+
+                <p class="text-white d-flex">
+                    <a href="mailto:prcosciswu@gmail.com" class="site-footer-link">
+                        prcosciswu@gmail.com
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/click-scroll.js"></script>
+<script src="js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="config.js"></script>
+<script src="js/load-global.js"></script> 
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ctx = document.getElementById('myChart');
+
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Document Views',
+                    data: [1200, 1900, 3000, 500, 2000, 3200],
+                    backgroundColor: '#0d6efd',
+                    borderRadius: 4,
+                    barThickness: 30
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: "#f3f3f3" }},
+                    x: { grid: { display: false }}
+                }
+            }
+        });
+    }
+});
+</script>
+
+
+</main>
+</body>
+</html>
