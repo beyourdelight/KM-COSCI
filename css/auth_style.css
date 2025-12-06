@@ -1,4 +1,6 @@
-/* General Reset */
+/* =========================================
+    1. การตั้งค่าพื้นฐาน (Global & Reset)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +13,16 @@ body, html {
     width: 100%;
 }
 
-/* Main Layout Container */
+/* =========================================
+    2. โครงสร้างหลัก (Main Layout)
+   ========================================= */
 .main-container {
     display: flex;
     height: 100vh;
     width: 100%;
 }
 
-/* --- Left Panel (Purple Side) --- */
+/* --- แผงด้านซ้าย (สีน้ำเงิน Gradient) --- */
 .left-panel {
     width: 40%;
     background: linear-gradient(to bottom, #1277C2, #1A4B7C); 
@@ -52,7 +56,7 @@ body, html {
     font-weight: 300;
 }
 
-/* --- Right Panel (White Side) --- */
+/* --- แผงด้านขวา (สีขาว สำหรับฟอร์ม) --- */
 .right-panel {
     width: 60%;
     background-color: white;
@@ -66,7 +70,11 @@ body, html {
     max-width: 450px;
 }
 
-/* Headings */
+/* =========================================
+    3. ส่วนประกอบในฟอร์ม (Form Elements)
+   ========================================= */
+
+/* หัวข้อของฟอร์ม */
 .section-title {
     margin-bottom: 10px;
     border-left: 5px solid #7899aa;
@@ -84,7 +92,7 @@ body, html {
     color: #333;
 }
 
-/* Subtext & Links */
+/* ข้อความรองและลิงก์สมัครสมาชิก */
 .sub-text {
     color: #666;
     margin-bottom: 40px;
@@ -96,7 +104,7 @@ body, html {
     text-decoration: underline;
 }
 
-/* Form Inputs */
+/* ช่องกรอกข้อมูล (Input Fields) */
 .input-group {
     margin-bottom: 25px;
 }
@@ -121,7 +129,7 @@ body, html {
     font-weight: 300;
 }
 
-/* Checkbox & Forgot Password row */
+/* ส่วน Checkbox และ ลืมรหัสผ่าน */
 .actions {
     display: flex;
     justify-content: space-between;
@@ -148,7 +156,7 @@ body, html {
     font-weight: 500;
 }
 
-/* Main Button */
+/* ปุ่มหลัก (Main Submit Button) */
 .btn-primary {
     background-color: #072f78;
     color: #fff;
@@ -165,7 +173,9 @@ body, html {
     background-color: #1277C2;
 }
 
-/* Social Media Section */
+/* =========================================
+    4. ส่วน Social Login
+   ========================================= */
 .social-login {
     margin-top: 40px;
 }
@@ -198,15 +208,19 @@ body, html {
     transition: opacity 0.3s;
 }
 
-/* Responsive */
+/* =========================================
+    5. การแสดงผลบนมือถือ (Responsive)
+   ========================================= */
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
     }
+
     .left-panel {
         width: 100%;
         height: 25vh;
     }
+
     .right-panel {
         width: 100%;
         padding: 40px 20px;
